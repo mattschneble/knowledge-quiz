@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
+     <h1>Welcome to the Knowledge Quiz!</h1>
+     <div id = "countdown-timer">
+        <p>Remaining Time: &nbsp<span id="timer">90</span>&nbspseconds</p>
+     </div>
+
+     <div id = "question-answer-div">
+        <section id="view-question"></section>
+        <section id="answer-choices"></section>
+     </div>
+
+     <div id = "begin-quiz-button-div">
+        <button id="begin-quiz-button">Begin Quiz</button>
+    </div>
+
+    <section id = "quiz-completed-screen" style="display: none;">
+        <h2>Quiz Completed!</h2>
+        <p>Your score is <span id="score"></span></p>
+        <label for="userInitials">Enter your Initials here:</label>
+        <input type="text" id="userInitials">
+        <button id="save-user-initials">Save Initials</button>
+    </section>
     
+    <section id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard-list"></ul>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
