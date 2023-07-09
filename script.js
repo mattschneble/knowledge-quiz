@@ -35,7 +35,7 @@ var questions = [
     },
 
     {
-        question: "How high is the highest diving board in the Olympics?",
+        question: "How high is the highest diving board/platform in Olympic diving competitions?",
         choices: ["10 meters", "5 meters", "3 meters", "1 meter"],
         answer: "10 meters",
     },
