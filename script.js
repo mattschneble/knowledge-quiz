@@ -152,3 +152,16 @@ function answerCheck(event) {
         quizCompleted();
     }
 }
+
+//create a function to end the game
+function quizCompleted() {
+    //stop the timer
+    clearInterval(beginTimer);
+    //hide the question and answer choices
+    viewQuestion.style.display = "none";
+    answerChoices.style.display = "none";
+    //display the quiz completed screen
+    quizCompletedScreen.style.display = "block";
+    //display the final score
+    document.getElementById("final-score").textContent = startingScore;
+}
