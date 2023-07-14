@@ -114,8 +114,8 @@ function showQuestion() {
         var choiceButton = document.createElement("button");
         //display the answer choice
         choiceButton.textContent = choice;
-        //add a click event listener to each answer choice
-        choiceButton.onclick = selectAnswer;
+        //add an event listener to each answer choice
+        choiceButton.addEventListener("click", answerCheck);
         //append the answer choice to the answer choices div
         answerChoices.appendChild(choiceButton);
     }
