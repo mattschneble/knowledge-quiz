@@ -92,6 +92,7 @@ function beginTimer() {
     }, 1000);
 }
 
+//create a function to start the quiz
 function startQuiz() {
     //start the timer
     beginTimer();
@@ -101,6 +102,7 @@ function startQuiz() {
     beginQuizButton.style.display = "none";
 }
 
+//create a function to show the next question
 function showQuestion() {
     //declare a variable to show the next question
     var nextQuestion = questions[questionIndex];
@@ -120,4 +122,33 @@ function showQuestion() {
         answerChoices.appendChild(choiceButton);
     }
     )
+}
+
+//create a function to check the answer
+function answerCheck(event) {
+    //declare a variable to hold the selected answer
+    var selectedAnswer = event.target.textContent;
+    //declare a variable to hold the correct answer
+    var correctAnswer = questions[questionIndex].answer;
+    //if the selected answer is correct, increase the score by 25 points
+    if (selectedAnswer === correctAnswer) {
+        startingScore += 25;
+    }
+    //if the selected answer is incorrect, decrease the timer by 15 seconds
+    else {
+        time -= 15;
+        if (time <= 0) {
+            time = 0;
+        }
+    }
+    //increase the question index by 1 and show the next question
+    questionIndex++;
+    //if the question index is less than the number of questions, show the next question
+    if (questionIndex < questions.length) {
+        showQuestion();
+    }
+    //if the question index is greater than or equal to the number of questions, the quiz is over
+    else {
+        quizCompleted();
+    }
 }
