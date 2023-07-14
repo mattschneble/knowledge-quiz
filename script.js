@@ -100,24 +100,3 @@ function startQuiz() {
     //hide the begin quiz button
     beginQuizButton.style.display = "none";
 }
-
-function showQuestion() {
-    //declare a variable to show the next question
-    var nextQuestion = questions[questionIndex];
-    //display the current question
-    viewQuestion.textContent = nextQuestion.question;
-    //clear the existing answer choices to allow for the new answer choices to be displayed
-    answerChoices.textContent = "";
-    //loop through the answer choices and display them
-    nextQuestion.choices.forEach(function (choice, i) {
-        //create a button for each answer choice
-        var choiceButton = document.createElement("button");
-        //display the answer choice
-        choiceButton.textContent = choice;
-        //add a click event listener to each answer choice
-        choiceButton.onclick = selectAnswer;
-        //append the answer choice to the answer choices div
-        answerChoices.appendChild(choiceButton);
-    }
-    )
-}
