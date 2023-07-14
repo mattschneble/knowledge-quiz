@@ -83,7 +83,7 @@ function beginTimer() {
     var timerInterval = setInterval(function () {
         //decrease the timer by 1 second (1000 ms) then display the new time
         time--;
-        countdownTimer.textContent = "Time: " + time;
+        countdownTimer.textContent = time;
 
         //if the timer reaches 0, the quiz is over
         if (time <= 0) {
@@ -111,18 +111,15 @@ function showQuestion() {
     viewQuestion.textContent = nextQuestion.question;
     //clear the existing answer choices to allow for the new answer choices to be displayed
     answerChoices.textContent = "";
-    //loop through the answer choices and display them
-    nextQuestion.choices.forEach(function (choice, i) {
-        //create a button for each answer choice
-        var choiceButton = document.createElement("button");
-        //display the answer choice
-        choiceButton.textContent = choice;
-        //add an event listener to each answer choice
-        choiceButton.addEventListener("click", answerCheck);
-        //append the answer choice to the answer choices div
-        answerChoices.appendChild(choiceButton);
+    //loop through the answer choices and display them in a list
+    for (var i = 0; i < nextQuestion.choices.length; i++) {
+        //create an answer list and append it to the answer choices
+        var answerList = document.createElement("li");
+        answerList.textContent = nextQuestion.choices[i];
+        answerChoices.appendChild(answerList);
+        //add an event listener to the answer list
+        answerList.addEventListener("click", answerCheck);    
     }
-    )
 }
 
 //create a function to check the answer
@@ -207,8 +204,6 @@ function displayLeaderboard() {
         scoreItem.textContent = score.initials + " - " + score.score;
         //append the score and initials to the leaderboard
         leaderboard.appendChild(scoreItem);
-    //show the start over button
-    startOverButton.style.display = "block";
     }
     )
 }
@@ -231,7 +226,3 @@ beginQuizButton.addEventListener("click", startQuiz);
 //add an event listener to the save initials button
 var saveScoreButton = document.querySelector('#save-user-initials');
 saveScoreButton.addEventListener("click", saveScore);
-
-//add an event listener to the start over button
-var startOverButton = document.querySelector('#start-over-button');
-startOverButton.addEventListener("click", startOver);

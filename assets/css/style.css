@@ -1,3 +1,124 @@
-h1 {
-    color:aliceblue
+#main-container {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 550px;
+    height: 550px;
+    border: 5px solid darkslateblue;
+}
+
+#begin-quiz-button-div {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkslateblue;
+    margin-left: 40%;
+}
+
+#question-answer-div {
+    margin: 20px;
+}
+
+#countdown-timer {
+    float: right;
+}
+
+button {
+    border-radius: 10px;
+    color: darkslateblue
+}
+
+#userInitials {
+    width: 60%;
+    margin: 50px;
+}
+
+#save-user-initials {
+    background-color: darkslateblue;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 50%;
+    border: 1px solid lightgray;
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkslateblue;
+}
+
+li {
+    background-color: darkslateblue;
+    margin: 10px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+a, p, ul, div {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkslateblue;
+}
+
+p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 5px;
+}
+
+/* Start media queries */
+/* A Media Query max-width: 786px */
+@media screen and (max-width: 786px) {
+/* Resized content to fit 786px  */
+body {
+    max-width: 786px;
+}
+/* Resized main-content to fit 786px  */
+#wrapper {
+position: absolute;
+left: 20%;
+}
+
+a {
+margin-left: 20%;
+}
+#goBack {
+    
+    position: relative;
+    left: 55%;
+}
+
+#clear {
+    
+    position: relative;
+    right: 5%;
+    
+}
+}
+
+/* A Media Query max-width: 640px */
+@media screen and (max-width: 640px) {
+/* Resized content to fit 640px  */
+body {
+    min-width: 640px;
+}
+/* Resized main-content to fit 640px  */
+#wrapper {
+position: absolute;
+left: 10%;
+}
+a {
+  margin-left: 10%;
+}
+
+
 }
