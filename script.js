@@ -71,8 +71,32 @@ var questions = [
     },
 
     {
-        question: "How many votes does a US President need to be elected?",
+        question: "How many electoral college votes does a US President need to be elected?",
         choices: ["265", "270", "275", "280"],
         answer: "270",
     }
 ];
+
+function beginTimer() {
+    //setting the timer to 90 seconds
+    var timerInterval = setInterval(function () {
+        //decrease the timer by 1 second (1000 ms) then display the new time
+        time--;
+        countdownTimer.textContent = "Time: " + time;
+
+        //if the timer reaches 0, the quiz is over
+        if (time <= 0) {
+            clearInterval(timerInterval);
+            quizCompleted();
+        }
+    }, 1000);
+}
+
+function startQuiz() {
+    //start the timer
+    beginTimer();
+    //begin showing questions
+    showQuestion();
+    //hide the begin quiz button
+    beginQuizButton.style.display = "none";
+}
