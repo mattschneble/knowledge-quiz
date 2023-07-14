@@ -8,33 +8,37 @@
 </head>
 
 <body>
-     <h1>Welcome to the Knowledge Quiz!</h1>
-     <h2>Test your luck with a general trivia quiz!</h2>
-     <div id = "countdown-timer">
+    <h1>Welcome to the Knowledge Quiz!</h1>
+    <h2>Test your luck with a general trivia quiz!</h2>
+    <div id = "countdown-timer">
         <p>Remaining Time: &nbsp<span id="timer">90</span>&nbspseconds</p>
-     </div>
+    </div>
 
-     <div id = "question-answer-div">
+    <div id = "question-answer-div">
         <section id="view-question"></section>
         <section id="answer-choices"></section>
-     </div>
+    </div>
 
-     <div id = "begin-quiz-button-div">
+    <div id = "begin-quiz-button-div">
         <button id="begin-quiz-button">Begin Quiz</button>
     </div>
 
-    <section id = "quiz-completed-screen" style="display: none;">
+    <div id = "quiz-completed-screen" style="display: none;">
         <h2>Quiz Completed!</h2>
         <p>Your score is <span id="final-score"></span></p>
         <label for="userInitials">Enter your Initials here:</label>
         <input type="text" id="userInitials">
         <button id="save-user-initials">Save Initials</button>
-    </section>
+    </div>
     
-    <section id="leaderboard">
+    <div id="leaderboard">
         <h2>Leaderboard</h2>
         <ul id="leaderboard-list"></ul>
-    </section>
+    </div>
+
+    <div id="start-over-container" style="display: none;">
+        <button id="start-over-button">Start Over</button>
+    </div>
 
     <script src="./script.js"></script>
 </body>

@@ -9,10 +9,11 @@ var userInitials = document.getElementById("userInitials");
 var saveUserInitials = document.getElementById("save-user-initials");
 
 //declaring global variables
+var timerInterval;
 var time = 90;
 var questionIndex = 0;
 var startingScore = 0;
-var highScores = [];
+var topScores = [];
 
 //creating array of questions and answers to be used during the quiz
 var questions = [
@@ -165,3 +166,72 @@ function quizCompleted() {
     //display the final score
     document.getElementById("final-score").textContent = startingScore;
 }
+
+//create a function to save the game score and initials
+function saveScore() {
+    //declare a variable to hold the user's initials
+    var userInitials = document.getElementById('userInitials').value.trim();
+    //declare a variable to hold the user's score and initials
+    //ensure the user has entered their initials
+    if (userInitials === "") {
+        alert("Please enter your initials");
+    }
+    //if the user has entered their initials, save the score and initials
+    else {
+        var userScore = {
+            initials: userInitials,
+            score: startingScore
+        };
+        //save the score and initials to local storage
+        var topScores = JSON.parse(localStorage.getItem("topScores")) || [];
+        topScores.push(userScore);
+        localStorage.setItem("topScores", JSON.stringify(topScores));
+        //display the leaderboard
+        displayLeaderboard();
+    }
+}
+
+//create a function to display the leaderboard
+function displayLeaderboard() {
+    //hide the quiz completed screen
+    quizCompletedScreen.style.display = "none";
+    //display the leaderboard
+    leaderboard.style.display = "block";
+    //declare a variable to hold the scores and initials from local storage
+    var topScores = JSON.parse(localStorage.getItem("topScores")) || [];
+    //loop through the scores and initials and display them
+    topScores.forEach(function (score) {
+        //create a list item for each score and initials
+        var scoreItem = document.createElement("li");
+        //display the score and initials
+        scoreItem.textContent = score.initials + " - " + score.score;
+        //append the score and initials to the leaderboard
+        leaderboard.appendChild(scoreItem);
+    //show the start over button
+    startOverButton.style.display = "block";
+    }
+    )
+}
+
+//create a function to start the quiz over
+function startOver() {
+    //reset the timer
+    time = 90;
+    //reset the score
+    startingScore = 0;
+    //reset the question index
+    questionIndex = 0;
+    //hide the leaderboard
+    leaderboard.style.display = "none";
+}
+
+//add an event listener to the begin quiz button
+beginQuizButton.addEventListener("click", startQuiz);
+
+//add an event listener to the save initials button
+var saveScoreButton = document.querySelector('#save-user-initials');
+saveScoreButton.addEventListener("click", saveScore);
+
+//add an event listener to the start over button
+var startOverButton = document.querySelector('#start-over-button');
+startOverButton.addEventListener("click", startOver);
