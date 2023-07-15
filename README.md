@@ -9,17 +9,16 @@ This is a quiz designed to test your knowledge. Good luck!
 | JQuery | [https://www.w3schools.com/jquery/] (https://www.w3schools.com/jquery/)
 | JQuery Syntax| [https://www.w3schools.com/jquery/jquery_syntax.asp] (https://www.w3schools.com/jquery/jquery_syntax.asp)
 | JQuery Selector| [https://www.w3schools.com/jquery/jquery_selectors.asp] (https://www.w3schools.com/jquery/jquery_selectors.asp)
-| Bootstrap | [https://getbootstrap.com/docs/4.0/getting-started/introduction/](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
 ## Description 
 
-This project was assigned to me to create a day planner/scheduler to help view the events that are scheduled for the day. The planner utilizes bootstrap to help simplify development and styling, as well as JavaScrip to add functionality. 
+This project was assigned to me to create a general knowledge quiz utilizing JavaScript, JQuery and traversing the DOM using API methods. 
 
-[Visit the Deployed Site](https://mattschneble.github.io/day-planner/)
+[Visit the Deployed Site](https://mattschneble.github.io/knowledge-quiz/)
 
 ## Usage 
 
-This page is to be used to track your schedule for the current day. Past hours will be one color (red), the current hour will have a second color (grey), and the future hours will be a third color (green).
+This page is to be used to test your general knowledge across a variety of subjects. This quiz has 10 questions and will award you 25 points per correct question, while deducting 15 seconds if an answer is wrong. 
 
 ![Screenshot of Quiz](./assets/images/After%20Wrong%20Answer.png)
 ![Screenshot of Quiz](./assets/images/Enter%20Initials.png)
@@ -29,7 +28,7 @@ This page is to be used to track your schedule for the current day. Past hours w
 
 ## Learning Points 
 
-Throughout the development of this program I was able to develop my JavaScript, JQuery and bootstrap skills including (but not limited to): functions, bootstrap HTML to make it easier to apply CSS styling, transversing a website by use of the DOM, localStorage, DayJS() and more. 
+Throughout the development of this program I was able to develop my JavaScript, JQuery and API abilities, as well as continuing to work on my HTML and CSS. I was able to utilize different skills such as creating arrays, developing variables using the API methods, appending information to the DOM, and continuing to grow my JavaScript function skills. 
 
 ### Matt Schneble
 
@@ -38,4 +37,4 @@ Throughout the development of this program I was able to develop my JavaScript, 
 
 ## Credits
 
- I would like to thank Henry Weigand and Kyle Vance for leading pseudocode sessions, as well as some of my classmates (including but not limited to), Thomas Munzar, Sonam Sherpa who asked great questions during the pseudocoding sessions to help increase understanding. All code was entered by myself, except for the source code provided by UC Berkely Full Stack Development Course. The source code was entered on commit "925c6c1". I also utilized the sites above to help gain a stronger understanding of concepts and how to use proper syntax, but all code was entered by myself.
+ I would like to thank Henry Weigand and Kyle Vance for leading pseudocode sessions, as well as some of my classmates (including but not limited to), Thomas Munzar, Sonam Sherpa who asked great questions during the pseudocoding sessions to help increase understanding. All code was entered by myself. I also utilized the sites above to help gain a stronger understanding of concepts and how to use proper syntax, but all code was entered by myself.
